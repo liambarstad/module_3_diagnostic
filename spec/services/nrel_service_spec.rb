@@ -8,7 +8,7 @@ RSpec.describe NRELService do
       result = JSON.parse(response.body)
 
       expect(response.body).to_not be(nil)
-      expect(result.count).to eq(10)
+      expect(result["fuel_stations"].count).to eq(10)
     end
   end
 end
