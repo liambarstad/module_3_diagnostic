@@ -1,0 +1,14 @@
+<h1>Stations for <%= @station_decorator.zip_code %>:</h1>
+
+<% @station_decorator.each do |station| %>
+  <div class='station'>
+    <ul>
+      <title><%= station.name %></title>
+      <li><%= station.address %></li>
+      <li><%= station.fuel_type %></li>
+      <li><%= station.distance %></li>
+      <li><%= station.access_times %></li>
+    </ul>
+  </div>
+<% end %>
+
