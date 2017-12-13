@@ -4,17 +4,16 @@ class NRELService
     @location = params[:zip_code]
   end
 
-  def get_stations
+  def get_station_json
     station_connection.get('/nearest') do |f|
       set_params(f)
     end
-
   end
 
   private
 
     def station_connection
-      Faraday.new('/api/alt-fuel-stations/v1') do |f|
+      Faraday.new('https://developer.nrel.gov/api/alt-fuel-stations/v1') do |f|
         f.params['format'] = 'json'
         f.params['api_key'] = ENV['NREL_API_KEY']
       end
