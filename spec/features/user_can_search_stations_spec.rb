@@ -4,6 +4,7 @@ RSpec.feature "user can search stations" do
   it "with main page search bar" do
     visit "/"
     fill_in "search", with: "80203"
+    save_and_open_page
     click_on "Locate"
 
     expect(current_path).to eq('/search')
